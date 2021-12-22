@@ -1,12 +1,12 @@
 package design.patterns;
 
-public class Warrior extends Role implements InterfaceHitPointsCalculation{
+public class Archer extends Role implements InterfaceHitPointsCalculation{
 	
 	private double finalHitPoints;
-	private double hitPointsRate = 2.0;
+	private double hitPointsRate = 0.8;
 	
-	public Warrior() {
-		super("Warrior");
+	public Archer() {
+		super("Archer");
 		this.finalHitPoints = calculateHitPoints(this.hitPointsRate);
 	}
 	
