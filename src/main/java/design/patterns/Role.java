@@ -1,8 +1,7 @@
 package design.patterns;
 
-public class Role {
+public class Role extends Player {
 	private String name;
-	private double HitPoints = 100.0;
 	
 	public Role(String name) {
 		this.name = name;
@@ -10,9 +9,5 @@ public class Role {
 	
 	public String getName() {
 		return this.name;
-	}
-	
-	public double getHitPoints() {
-		return this.HitPoints;
 	}
 }
