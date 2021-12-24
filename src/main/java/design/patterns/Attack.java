@@ -4,10 +4,20 @@ public abstract class Attack {
 	
 	protected Integer damage;
 	protected Integer precision;
+	private Buff buff;
 	
+	public Buff getBuff() {
+		return buff;
+	}
+
+	public void setBuff(Buff buff) {
+		this.buff = buff;
+	}
+
 	public Attack() {
 		this.damage = Utils.getRandomNumber(0, 50);
 		this.precision = Utils.getRandomNumber(30, 80);
+		this.buff = new Buff("Damage Buff", 10, new BuffInactive());
 	}
 	
 	public Integer getDamageStat() {
@@ -19,7 +29,7 @@ public abstract class Attack {
 	}
 	
 	public double getFinalAttackDamage() {
-		return this.damage * getDamageModifier();
+		return this.damage * getDamageModifier() + this.buff.getBuffStrength();
 	}
 	
 	public double getFinalPrecision() {
