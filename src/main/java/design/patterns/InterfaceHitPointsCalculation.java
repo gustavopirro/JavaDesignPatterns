@@ -6,5 +6,5 @@ package design.patterns;
 //as Strategy Pattern Example
 
 public interface InterfaceHitPointsCalculation {
-	public double calculateHitPoints(Double hitPointsRate);
+	public double calculateHitPoints();
 }

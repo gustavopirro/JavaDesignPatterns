@@ -4,11 +4,11 @@ public class Main {
 	public static void main(String args[]) {
 		
 		//Implementation of Strategy Pattern
-		Warrior warrior = new Warrior();
-		Archer archer = new Archer();
-		
-		System.out.println("Warrior final HitPoints:" + warrior.getFinalHitPoints());
-		System.out.println("Archer final HitPoints:" + archer.getFinalHitPoints());
+		Player playerOne = new Player("PlayerOne", new Archer());
+		Player playerTwo = new Player("PlayerTwo", new Warrior());
+
+		System.out.println(playerOne.getRoleName() + " final HitPoints:" + playerOne.getFinalHitPoints());
+		System.out.println(playerTwo.getRoleName() + " final HitPoints:" + playerTwo.getFinalHitPoints());
 		
 		//Implementation of Null Object Pattern
 		System.out.println("");
