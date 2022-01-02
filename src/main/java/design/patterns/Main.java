@@ -41,6 +41,29 @@ public class Main {
 		buff.setBuffState(new BuffInactive());
 		System.out.println("Inactive state buff attack damage: " + attack.getFinalAttackDamage());
 		
+		//Implementation of Observer Pattern
+		MonsterRespawnObservable goblinRespawn = new MonsterRespawnObservable("Goblin");
+		MonsterRespawnObservable dragonRespawn = new MonsterRespawnObservable("Dragon");
+		
+		Player genericPlayer = new Player("genericPlayer", new Archer());
+		Player genericPlayer2 = new Player("genericPlayer2", new Warrior());
+		Player genericPlayer3 = new Player("genericPlayer3", new Archer());
+		
+		MonsterRespawnObserver genericObserver = new MonsterRespawnObserver(genericPlayer);
+		MonsterRespawnObserver genericObserver2 = new MonsterRespawnObserver(genericPlayer2);
+		MonsterRespawnObserver genericObserver3 = new MonsterRespawnObserver(genericPlayer3);
+		
+		goblinRespawn.addObserver(genericObserver);
+		goblinRespawn.addObserver(genericObserver2);
+		goblinRespawn.addObserver(genericObserver3);
+		
+		dragonRespawn.addObserver(genericObserver);
+		
+		System.out.println();
+		goblinRespawn.notify("has just respawned!");
+		System.out.println();
+		dragonRespawn.notify("is currently dead!");
+		
 		
 	}
 }
