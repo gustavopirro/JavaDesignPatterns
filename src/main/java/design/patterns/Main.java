@@ -64,6 +64,19 @@ public class Main {
 		System.out.println();
 		dragonRespawn.notify("is currently dead!");
 		
+		//Implementation of Composite Pattern
+		UsablePotion smallPotion = new SimplePotion("Small Red Potion", "Health Potion", 10.0);
+		UsablePotion bigPotion = new SimplePotion("Big Red Potion", "Health Potion", 30.0);
+		UsablePotion specialPotion = new CombinedPotion(smallPotion, bigPotion);
+		
+		System.out.println();
+		System.out.println(smallPotion);
+		System.out.println(bigPotion);
+		System.out.println(specialPotion);
+		System.out.println("Combined Potion Strength: " + specialPotion.getPotionStrength());
+		
+		
+		
 		
 	}
 }
