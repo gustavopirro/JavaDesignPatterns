@@ -6,4 +6,10 @@ public class Archer extends Role {
 		super("Archer", 0.8);
 	}
 
+	public double roleSpecialAttack() {
+		Attack rangedAttack = new NormalAttack();
+		double attackDamage = rangedAttack.getFinalAttackDamage() * 1.10;
+		return attackDamage;
+	}
+
 }

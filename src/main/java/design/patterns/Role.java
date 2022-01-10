@@ -1,6 +1,6 @@
 package design.patterns;
 
-public class Role {
+public abstract class Role implements InterfaceRoleBasedSpecialAttack{
 	private String roleName;
 	private double hitPointsRate;
 	
@@ -13,7 +13,6 @@ public class Role {
 		return this.roleName;
 	}
 	
-	
 	public double getHitPointsRate() {
 		return hitPointsRate;
 	}
@@ -21,5 +20,7 @@ public class Role {
 	public void setHitPointsRate(double hitPointsRate) {
 		this.hitPointsRate = hitPointsRate;
 	}
+
+	public abstract double roleSpecialAttack();
 
 }

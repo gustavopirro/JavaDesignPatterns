@@ -15,6 +15,10 @@ public class Player implements InterfaceHitPointsCalculation{
 	public String getRoleName() {
 		return this.role.getName();
 	}
+
+	public Role getRole(){
+		return this.role;
+	}
 	
 	public String getPlayerName() {
 		return playerName;
@@ -24,9 +28,6 @@ public class Player implements InterfaceHitPointsCalculation{
 		return this.finalHitPoints;
 	}
 
-//	Implemented interface to calculate
-//	Hit Points of each Role
-//	as Strategy Pattern Example
 	public double calculateHitPoints() {
 		return this.hitPoints * this.role.getHitPointsRate();
 	}

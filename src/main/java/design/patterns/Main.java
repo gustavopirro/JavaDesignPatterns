@@ -7,8 +7,8 @@ public class Main {
 		Player playerOne = new Player("PlayerOne", new Archer());
 		Player playerTwo = new Player("PlayerTwo", new Warrior());
 
-		System.out.println(playerOne.getRoleName() + " final HitPoints:" + playerOne.getFinalHitPoints());
-		System.out.println(playerTwo.getRoleName() + " final HitPoints:" + playerTwo.getFinalHitPoints());
+		System.out.println(playerOne.getRoleName() + " special attack damage:" + playerOne.getRole().roleSpecialAttack());
+		System.out.println(playerTwo.getRoleName() + " special attack damage:" + playerTwo.getRole().roleSpecialAttack());
 		
 		//Implementation of Null Object Pattern
 		System.out.println("");
@@ -90,7 +90,6 @@ public class Main {
 			
 			//Throws RunTimeException
 			rangedPotionBuff.setNext(null);
-			System.out.println("Potion invalid role: " + meelePotionBuff.calculatePotionClassBuff(new Role("Admnistrator", 1000.0), averagePotion));
 		} catch (RuntimeException ex) {
 			System.err.println(ex);
 		}
