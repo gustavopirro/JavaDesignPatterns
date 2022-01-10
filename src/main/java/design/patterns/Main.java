@@ -75,7 +75,25 @@ public class Main {
 		System.out.println(specialPotion);
 		System.out.println("Combined Potion Strength: " + specialPotion.getPotionStrength());
 		
+		//Implementation of Chain of Responsibility Pattern
+		UsablePotion averagePotion = new SimplePotion("Average Red Potion", "Health Potion", 10.0);
+		PotionClassBuff meelePotionBuff = new PotionMeleeBuff();
+		PotionClassBuff rangedPotionBuff = new PotionRangedBuff();
 		
+		
+		try {
+			meelePotionBuff.setNext(rangedPotionBuff);
+			
+			System.out.println("Potion default strength: " + averagePotion.getPotionStrength());
+			System.out.println("Potion melee strength: " + meelePotionBuff.calculatePotionClassBuff(new Warrior(), averagePotion));
+			System.out.println("Potion ranged strength: " + meelePotionBuff.calculatePotionClassBuff(new Archer(), averagePotion));
+			
+			//Throws RunTimeException
+			rangedPotionBuff.setNext(null);
+			System.out.println("Potion invalid role: " + meelePotionBuff.calculatePotionClassBuff(new Role("Admnistrator", 1000.0), averagePotion));
+		} catch (RuntimeException ex) {
+			System.err.println(ex);
+		}
 		
 		
 	}
